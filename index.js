@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const BASE_DIR = process.argv[process.argv.length - 1];
 
-const maliciousChecks = ['<<', '~', '""', 'fromCharCode', '0x', '\\x', '][', 'eval', '~~', 'charCodeAt', 'z1', 'new RegExp', '()+', '\'\'', 'v5', 'v8', 'v0', '>>>', '^', '|', '>>', 'new Function', 'unescape', 'atob'];
+const maliciousChecks = ['<<', '~', '""', 'fromCharCode', '0x', '\\x', '][', 'eval', '~~', 'charCodeAt', 'z1', 'new RegExp', '()+', '\'\'', 'v5', 'v8', 'v0', '>>>', '^', '|', '>>', 'new Function', 'unescape', 'atob', 'self', 'window', 'fetch'];
 
 const getAllJsInDirectory = (dir, filelist = []) => {
     fs.readdirSync(dir).forEach(file => {
@@ -27,7 +27,7 @@ onlyJS.forEach(filepath => {
 			redFlags.push(badThing);
         }
     });
-    if (points > 3) {
+    if (points > 15) {
         console.log(`${filepath}: score: ${points}, redflags: ${redFlags}`);
     }
 });
