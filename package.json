@@ -1,0 +1,25 @@
+{
+  "name": "nobfuscate",
+  "version": "1.0.0",
+  "description": "Checks for malicious looking javascript code in a large dependency tree",
+  "main": "index.js",
+  "scripts": {
+    "evaluate": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tevko/nobfuscate.git"
+  },
+  "keywords": [
+    "malicious",
+    "security",
+    "javascript"
+  ],
+  "author": "tevko",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/tevko/nobfuscate/issues"
+  },
+  "homepage": "https://github.com/tevko/nobfuscate#readme"
+}
